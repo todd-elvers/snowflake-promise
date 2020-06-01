@@ -3,6 +3,8 @@
 coverage
 
 # editor settings
+.idea
+*.iml
 .vscode
 .editorconfig
 
