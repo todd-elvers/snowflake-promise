@@ -1,30 +1,45 @@
 {
+  "extends": "tslint-immutable/all",
+  "linterOptions": {
+    // Don't lint our test files
+    "exclude": ["**/*.test.ts"]
+  },
   "rules": {
-    "no-unused-expression": true,
-    // "no-unused-variable": [true, {"ignore-pattern": "^_"}],
-    "no-duplicate-variable": true,
-    "curly": true,
-    "class-name": true,
-    "semicolon": [
-      "always"
-    ],
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": [true],
+
+    // Import statement rules
+    "ordered-imports": true,
+    "no-duplicate-imports": {
+      "severity": "error",
+      "options": {
+        "allow-namespace-imports": true
+      }
+    },
+
+    "no-mixed-interface": false,
+    "no-let": [true, { "ignore-pattern": "_*" }],
+    "curly": [true, "as-needed"],
     "triple-equals": true,
-    "quotemark": [
-      "single"
-    ],
-    "linebreak-style": [
-      "LF"
-    ],
-    "eofline": true,
-    "no-conditional-assignment": true,
-    "use-isnan": true,
-    "indent": [
+    "no-if-statement": false,
+    "no-delete": false,
+    "no-expression-statement": false,
+    "no-object-mutation": false,
+
+    "readonly-array": [true, "ignore-local"],
+    "array-type": false,
+    "no-namespace": false,
+    "callable-types": false,
+    "interface-over-type-literal": false,
+
+    "interface-name": false,
+    "object-literal-sort-keys": false,
+    "no-shadowed-variable": false,
+    "variable-name": [
       true,
-      "spaces"
-    ],
-    "arrow-return-shorthand": [
-      true
-    ],
-    "no-trailing-whitespace": true
+      "allow-leading-underscore",
+      "allow-trailing-underscore",
+      "allow-pascal-case"
+    ]
   }
 }
